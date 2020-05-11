@@ -25,9 +25,6 @@ function displayDetails() {
     function displaySelect() {
     let show = optShow.options[optShow.selectedIndex].innerText;
     showOutput.innerText = "Show: " + show;}
-
-   // const line4 = document.getElementById("showResult");
-    //let text4 = document.createTextNode(show);
     
     methodOutput.innerText = "Method: " + selectedMethod.value;
 
