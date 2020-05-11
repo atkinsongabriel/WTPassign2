@@ -8,6 +8,7 @@ function displayDetails() {
     const addressOutput = document.getElementById("addressResult");
     const ticketsOutput = document.getElementById("ticketsResult");
     const methodOutput = document.getElementById("methodResult");
+    const total = document.getElementById("total");
     const allMethods = document.querySelectorAll("input[name='method']");
     const selectedMethod = 
         document.querySelector("input[name='method']:checked");
@@ -31,4 +32,32 @@ function displayDetails() {
     function checkPreference() {
         methodOutput.innerText = "Method: " + selectedMethod.value;
     }
+
+    calculateShow();
+
+    function calculateShow() {
+           
+            total.innerText = 
+                show * tickets ;
+        }
+        
+    }
+
+function clearDetails() {
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const tickets = document.getElementById("tickets").value;
+    const optShow = document.getElementById("show");
+    const showOutput = document.getElementById("showResult");
+    const nameOutput = document.getElementById("nameResult");
+    const addressOutput = document.getElementById("addressResult");
+    const ticketsOutput = document.getElementById("ticketsResult");
+    const methodOutput = document.getElementById("methodResult");
+    const allMethods = document.querySelectorAll("input[name='method']");
+    
+    nameOutput.innerText = "Name: ";
+    addressOutput.innerText = "Address: " ;
+    ticketsOutput.innerText = "Number of tickets: ";
+    methodOutput.innerText = "Method: "
+    showOutput.innerText="Show: ";
 }
