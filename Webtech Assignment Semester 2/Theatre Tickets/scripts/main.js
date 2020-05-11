@@ -35,7 +35,7 @@ function displayDetails() {
     //end displaying options
 
      //calculations
-     calculateMethodCost()
+    calculateMethodCost();
 
      function calculateMethodCost() {
          if (selectedMethod.value == "edelivery") {
@@ -52,7 +52,7 @@ function displayDetails() {
         }
         
 
-     calculateShowCost()
+     calculateShowCost() ;
     
      function calculateShowCost() {
 
@@ -68,11 +68,23 @@ function displayDetails() {
         else {
             showCost = 83;
         }
-
-        total.innerText = 
-            (parseFloat(showCost) * parseFloat(tickets)) + parseFloat(methodCost)
-
     }
+    
+    var totalCalculation = (parseFloat(showCost) * parseFloat(tickets)) + parseFloat(methodCost);
+
+    if (tickets >=6 ) {
+        var discountTen = (10 / 100) * parseFloat(totalCalculation);
+        totalCalculation = totalCalculation - parseFloat(discountTen) ;
+    }
+
+    if (tickets >=10 ) {
+        var discountFifteen = (15 / 100) * parseFloat(totalCalculation);
+        totalCalculation = totalCalculation - parseFloat(discountFifteen);
+    }
+
+    //total cost
+    total.innerText = 
+        `Total: £${totalCalculation.toFixed(2)}`;
     
     //end calculations
 
@@ -88,11 +100,13 @@ function clearDetails() {
     const addressOutput = document.getElementById("addressResult");
     const ticketsOutput = document.getElementById("ticketsResult");
     const methodOutput = document.getElementById("methodResult");
+    const total = document.getElementById("total");
     
     nameOutput.innerText = "Name: ";
     addressOutput.innerText = "Address: " ;
     ticketsOutput.innerText = "Number of tickets: ";
-    methodOutput.innerText = "Method: "
+    methodOutput.innerText = "Method: ";
     showOutput.innerText="Show: ";
+    total.innerText= "Total: "
 }
 //end clear function

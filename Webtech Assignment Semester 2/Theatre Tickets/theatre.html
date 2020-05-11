@@ -17,22 +17,22 @@
 
             <!-- form begin -->
             <div id="formm">
-            <form method="get">
+            <form onsubmit="return false">
                 <fieldset>
 
                 <!-- name -->
                 <legend>Name:</legend>
-                <input type="text" id="name" name="name" placeholder="enter name here" required><br>
+                <input type="text" id="name" name="name" placeholder="enter name here" required/><br>
                 </fieldset>
                 <fieldset>
                 <!-- address -->
                 <legend>Address:</legend>
-                <input type="text" id="address" name="address" placeholder="enter address here" required><br>
+                <input type="text" id="address" name="address" placeholder="enter address here" required/><br>
                 </fieldset>
                 <fieldset>
                 <!-- number of tickets -->
                     <legend>Number of tickets:</legend>
-                    <input type="number" min="0" id="tickets" name="tickets" placeholder="enter number of tickets here" required><br>
+                    <input type="number" min="0" id="tickets" name="tickets" placeholder="enter number of tickets here" required/><br>
                 </fieldset>
                 <fieldset>
                 <!-- show -->
@@ -58,7 +58,7 @@
                 </fieldset>
 
                     <br>
-                    <input type="button" onclick="displayDetails()" value="Submit" />
+                    <input type="submit" onclick="displayDetails()" value="Submit" />
                     <input type="reset" onclick="clearDetails()" value="Clear" />
              
             </form>
