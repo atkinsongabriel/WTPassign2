@@ -22,3 +22,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(236,179,230,1) 0%, rg
     margin: 0 auto;
     margin-top:30px;
 }
+
+h1 {
+    text-align:center;
+}
