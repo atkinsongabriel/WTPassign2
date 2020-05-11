@@ -104,8 +104,10 @@ function displayDetails() {
     }
 
     //total cost
+    if (tickets >=6) {
     finalTotal.innerText = 
         `Final Total: £${finalCalculation.toFixed(2)}`;
+    }
     }
     //end calculations
 
@@ -132,7 +134,7 @@ function clearDetails() {
     ticketsOutput.innerText = "Number of tickets: ";
     methodOutput.innerText = "Method: ";
     showOutput.innerText="Show: ";
-    total.innerText= "Total: "
+    total.innerText= "Total: ";
     finalTotal.innerText="Final Total: ";
     discountResult.innerText="Discount: ";
 }
