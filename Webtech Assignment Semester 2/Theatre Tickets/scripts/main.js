@@ -2,6 +2,7 @@
 function displayDetails() { 
 
     // displaying options chosen
+    // get references to elements
     const name = document.getElementById("name").value;
     const address = document.getElementById("address").value;
     const tickets = document.getElementById("tickets").value;
@@ -11,23 +12,30 @@ function displayDetails() {
     const addressOutput = document.getElementById("addressResult");
     const ticketsOutput = document.getElementById("ticketsResult");
     const methodOutput = document.getElementById("methodResult");
+    const finalTotal = document.getElementById("finalTotal");
+    const discountResult = document.getElementById("discountResult");
     const allMethods = document.querySelectorAll("input[name='method']");
     const selectedMethod = 
         document.querySelector("input[name='method']:checked");
-    
+
+    // attach event handler
     for (let i = 0; i < allMethods.length; i++) {
         allMethods[i].addEventListener("change", checkPreference);
     }
     
+    // implement event handlers
     nameOutput.innerText = "Name: " + name;
     addressOutput.innerText = "Address: " + address;
     ticketsOutput.innerText = "Number of tickets: " + tickets;
     methodOutput.innerText = "Method: " + selectedMethod.value;
+
     displaySelect();
+
     function displaySelect() {
         let show = optShow.options[optShow.selectedIndex].innerText;
         showOutput.innerText = "Show: " + show;
     }
+
     function checkPreference() {
         methodOutput.innerText = "Method: " + selectedMethod.value;
     }
@@ -70,9 +78,9 @@ function displayDetails() {
         }
     }
     
-    var totalCalculation = (parseFloat(showCost) * parseFloat(tickets)) + parseFloat(methodCost);
-    total.innerText = 
-        `Total: £${totalCalculation.toFixed(2)}`;
+    // first total calculation
+        var totalCalculation = (parseFloat(showCost) * parseFloat(tickets)) + parseFloat(methodCost);
+            total.innerText =  `Total: £${totalCalculation.toFixed(2)}`;
 
     calculateDiscount();
 
@@ -91,6 +99,8 @@ function displayDetails() {
 
     if (tickets <=5 ){
         discountResult.innerText = "Discount: No Discount";
+        finalTotal.innerText = 
+        `Final Total: £${totalCalculation.toFixed(2)}`;
     }
 
     //total cost
@@ -106,18 +116,24 @@ function displayDetails() {
 // function that is run after clicking clear, empties result box
 function clearDetails() {
 
+    // get references to elements
     const showOutput = document.getElementById("showResult");
     const nameOutput = document.getElementById("nameResult");
     const addressOutput = document.getElementById("addressResult");
     const ticketsOutput = document.getElementById("ticketsResult");
     const methodOutput = document.getElementById("methodResult");
     const total = document.getElementById("total");
-    
+    const finalTotal = document.getElementById("finalTotal");
+    const discountResult = document.getElementById("discountResult");
+
+    // implement event handlers
     nameOutput.innerText = "Name: ";
     addressOutput.innerText = "Address: " ;
     ticketsOutput.innerText = "Number of tickets: ";
     methodOutput.innerText = "Method: ";
     showOutput.innerText="Show: ";
     total.innerText= "Total: "
+    finalTotal.innerText="Final Total: ";
+    discountResult.innerText="Discount: ";
 }
 //end clear function
