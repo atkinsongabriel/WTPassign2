@@ -17,40 +17,45 @@
 
             <!-- form begin -->
             <div id="formm">
-            <form id="form">
+            <form method="get">
+                <fieldset>
+
                 <!-- name -->
                 <legend>Name:</legend>
                 <input type="text" id="name" name="name" placeholder="enter name here" required><br>
-
+                </fieldset>
+                <fieldset>
                 <!-- address -->
                 <legend>Address:</legend>
                 <input type="text" id="address" name="address" placeholder="enter address here" required><br>
-
+                </fieldset>
+                <fieldset>
                 <!-- number of tickets -->
                     <legend>Number of tickets:</legend>
                     <input type="number" min="0" id="tickets" name="tickets" placeholder="enter number of tickets here" required><br>
-
+                </fieldset>
+                <fieldset>
                 <!-- show -->
-                <legend for="show">Show:</legend>
+                <legend>Show:</legend>
                 <select id="show" name="show">
-                   <option value="Phantom of the Opera" id="phantom">Phantom of the Opera</option>
-                   <option value="Hamilton" id="hamilton">Hamilton</option>
-                   <option value="Lion King" id="lion" selected>Lion King</option>
-                   <option value="Miss Saigon" id="saigon">Miss Saigon</option>
+                   <option value="phantom" id="phantom">Phantom of the Opera</option>
+                   <option value="hamilton" id="hamilton">Hamilton</option>
+                   <option value="lionking" id="lion" selected>Lion King</option>
+                   <option value="misssaigon" id="saigon">Miss Saigon</option>
                 </select><br>
-            
-            
-
+                </fieldset>
+                <fieldset>
                 <!-- method -->
                     <legend>Method of delivery:</legend>
-                    <input type="radio" id="edelivery" name="method" value="e-delivery" checked>
+                    <input type="radio" id="edelivery" name="method" value="edelivery" checked>
                     <label for="edelivery">e-delivery</label>
                  
-                    <input type="radio" id="boxoffice" name="method" value="box office">
+                    <input type="radio" id="boxoffice" name="method" value="boxoffice">
                     <label for="boxoffice">box office</label>
              
                     <input type="radio" id="posted" name="method" value="posted">
                     <label for="posted">posted</label>
+                </fieldset>
 
                     <br>
                     <input type="button" onclick="displayDetails()" value="Submit" />
@@ -75,5 +80,7 @@
         <footer>
         </footer>
 
-                <!-- javascript -->
-                <script async src="scripts/main.js"></script>
+            <!-- javascript -->
+            <script async src="scripts/main.js"></script>
+        </body>
+        </html>
