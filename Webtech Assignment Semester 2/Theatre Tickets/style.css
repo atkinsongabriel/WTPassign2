@@ -4,13 +4,6 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(236,179,230,1) 0%, rg
 
 }
 
-#main {
-    margin: auto;
-    position: absolute;
-    top: 25%; left: 40%;
-    text-align:center;
-  }  
-
 #result {
     border: 1px rgb(222, 250, 255);
     padding:10px;
@@ -22,4 +15,10 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(236,179,230,1) 0%, rg
     padding:10px;
     margin-bottom:20px;
     background:rgb(222, 250, 255);
+}
+
+#main {
+    width:400px;
+    margin: 0 auto;
+    margin-top:30px;
 }

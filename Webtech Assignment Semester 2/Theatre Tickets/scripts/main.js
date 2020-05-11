@@ -38,15 +38,15 @@ function displayDetails() {
     calculateMethodCost();
 
      function calculateMethodCost() {
-         if (selectedMethod.value == "edelivery") {
+         if (selectedMethod.value == "e-Delivery (free)") {
              methodCost = 0;
          }
  
-         else if (selectedMethod.value == "boxoffice") {
+         else if (selectedMethod.value == "Box Office (£1.50)") {
              methodCost = 1.50;
          }
  
-         else if (selectedMethod.value == "posted") {
+         else if (selectedMethod.value == "Posted (£3.99)") {
              methodCost = 3.99;
          }
         }
@@ -71,21 +71,32 @@ function displayDetails() {
     }
     
     var totalCalculation = (parseFloat(showCost) * parseFloat(tickets)) + parseFloat(methodCost);
+    total.innerText = 
+        `Total: £${totalCalculation.toFixed(2)}`;
 
+    calculateDiscount();
+
+    function calculateDiscount() {
     if (tickets >=6 ) {
         var discountTen = (10 / 100) * parseFloat(totalCalculation);
-        totalCalculation = totalCalculation - parseFloat(discountTen) ;
+        finalCalculation = totalCalculation - parseFloat(discountTen) ;
+        discountResult.innerText = "Discount: 10% Discount";
     }
 
     if (tickets >=10 ) {
         var discountFifteen = (15 / 100) * parseFloat(totalCalculation);
-        totalCalculation = totalCalculation - parseFloat(discountFifteen);
+        finalCalculation = totalCalculation - parseFloat(discountFifteen);
+        discountResult.innerText = "Discount: 15% Discount";
+    }
+
+    if (tickets <=5 ){
+        discountResult.innerText = "Discount: No Discount";
     }
 
     //total cost
-    total.innerText = 
-        `Total: £${totalCalculation.toFixed(2)}`;
-    
+    finalTotal.innerText = 
+        `Final Total: £${finalCalculation.toFixed(2)}`;
+    }
     //end calculations
 
 }
