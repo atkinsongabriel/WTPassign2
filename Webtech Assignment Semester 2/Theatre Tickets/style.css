@@ -1,0 +1,25 @@
+body {
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(236,179,230,1) 0%, rgba(0,212,255,1) 100%);
+
+}
+
+#main {
+    margin: auto;
+    position: absolute;
+    top: 25%; left: 40%;
+    text-align:center;
+  }  
+
+#result {
+    border: 1px rgb(222, 250, 255);
+    padding:10px;
+    background:rgb(222, 250, 255);
+}
+
+#formm {
+    border:1px rgb(222, 250, 255);
+    padding:10px;
+    margin-bottom:20px;
+    background:rgb(222, 250, 255);
+}

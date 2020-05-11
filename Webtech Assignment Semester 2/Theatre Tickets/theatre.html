@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- head -->
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="A Theatre Ticket Form.">
+        <title>Theatre Tickets</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    
+	<body>
+
+        <!-- main body -->
+        <div id="main">
+
+            <!-- form begin -->
+            <div id="formm">
+            <form id="form">
+                <!-- name -->
+                <legend>Name:</legend>
+                <input type="text" id="name" name="name" placeholder="enter name here"><br>
+
+                <!-- address -->
+                <legend>Address:</legend>
+                <input type="text" id="address" name="address" placeholder="enter address here"><br>
+
+                <!-- number of tickets -->
+                    <legend>Number of tickets:</legend>
+                    <input type="text" id="tickets" name="tickets" placeholder="enter number of tickets here"><br>
+
+                <!-- show -->
+                <legend for="show">Show:</legend>
+                <select id="show" name="show">
+                   <option value="Phantom of the Opera">Phantom of the Opera</option>
+                   <option value="Hamilton" >Hamilton</option>
+                   <option value="Lion King" selected>Lion King</option>
+                   <option value="Miss Saigon">Miss Saigon</option>
+                </select><br>
+            
+            
+
+                <!-- method -->
+                    <legend>Method of delivery:</legend>
+                    <input type="radio" id="edelivery" name="method" value="edelivery" checked>
+                    <label for="edelivery">e-delivery</label>
+                 
+                    <input type="radio" id="boxoffice" name="method" value="boxoffice">
+                    <label for="boxoffice">box office</label>
+             
+                    <input type="radio" id="posted" name="method" value="posted">
+                    <label for="posted">posted</label>
+
+                    <br>
+                    <input type="button" onclick="displayDetails()" value="Submit" />
+                    <input type="button" onclick="clear();" value="Clear" />
+             
+            </form>
+            </div>
+            <!-- form -->
+
+            <!-- displays prices etc -->
+            <div id="result">
+                <div id="nameResult"> Name: </div> <br>
+                <div id="addressResult"> Address: </div> <br>
+                <div id="ticketsResult"> Number of tickets:  </div> <br>
+                <div id="showResult"> Show: </div> <br>
+                <div id="methodResult">Method of delivery: </div> <br>
+                <div id="total">Total:</div> <br>
+            </div>
+
+            </div>
+        <!-- footer -->
+        <footer>
+        </footer>
+
+                <!-- javascript -->
+                <p id="output"></p> 
+                <script async src="scripts/main.js"></script>
