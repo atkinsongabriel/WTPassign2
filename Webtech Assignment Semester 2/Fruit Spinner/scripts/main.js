@@ -83,8 +83,7 @@ function collectWinnings() {
         txtMessage.innerText = "spin to earn winnings!";
     }
     else {
-        let winnings = winningsBox.innerText;
         winningsBox.innerText = 0;
-        txtMessage.innerText = "winnings have been collected"
+        txtMessage.innerText = "winnings have been collected";
     }
 }
