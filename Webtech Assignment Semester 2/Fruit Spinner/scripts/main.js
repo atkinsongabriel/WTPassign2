@@ -36,7 +36,7 @@ fruitz.innerHTML = "<img src="+images[randomz]+">";
 window.onload=function() {
     document.getElementById("spin").disabled=true;
     document.getElementById("collect").disabled=true;
-  }
+}
 
 
 //functions
@@ -84,7 +84,6 @@ function collectWinnings() {
     }
     else {
         let winnings = winningsBox.innerText;
-        creditBox.innerText -= -winnings;
         winningsBox.innerText = 0;
         txtMessage.innerText = "winnings have been collected"
     }
