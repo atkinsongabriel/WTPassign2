@@ -18,12 +18,12 @@ collect.addEventListener("click", collectWinnings);
 let apple = "images/apple.png";
 let banana = "images/banana.png";
 let bar = "images/bar.png";
-let cherry = "images/cherries.png"
-let grape = "images/grapes.png";
+let cherries = "images/cherries.png"
+let grapes = "images/grapes.png";
 let lemon = "images/lemon.png";
 let melon = "images/melon.png";
 let orange = "images/orange.png";
-let images = [apple, banana, bar, cherry, grape, lemon, melon, orange];
+let images = [apple, banana, bar, cherries, grapes, lemon, melon, orange];
 
 // on page load, randomise 3 images
 let randoma = Math.floor(Math.random() * 8);
