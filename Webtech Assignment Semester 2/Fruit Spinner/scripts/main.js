@@ -1,48 +1,80 @@
-//get references to interactive elements
-const imgFruit = document.getElementById("imgfruit");
-const addCredit = document.getElementById("credit");
-const txtWinnings = document.getElementById("winnings");
-const totalCredit = document.getElementById("totalCredits");
-const reset = document.getElementById("reset");
+// declaring constants
+const creditBox = document.getElementById("totalCredits");
+const winningsBox = document.getElementById("winnings");
+const fruitx = document.getElementById("fruit1");
+const fruity = document.getElementById("fruit2");
+const fruitz = document.getElementById("fruit3");
+const txtMessage = document.getElementById("txtMessage");
 const spin = document.getElementById("spin");
-const message = document.getElementById("message");
-const spinClicked = document.getElementById("spin");
+const credit = document.getElementById("credit");
+const collect = document.getElementById("collect");
 
-//add event listeners
+// add event listeners
+credit.addEventListener("click", addCredit);
+spin.addEventListener("click", fruitSpin);
+collect.addEventListener("click", collectWinnings);
 
-//when page loaded
-//when roll button clicked
+// declare images
+let apple = "images/apple.png";
+let banana = "images/banana.png";
+let bar = "images/bar.png";
+let cherry = "images/cherries.png"
+let grape = "images/grapes.png";
+let lemon = "images/lemon.png";
+let melon = "images/melon.png";
+let orange = "images/orange.png";
 
-var defaultCredit = 0;
+// on page load
+let images = [apple, banana, bar, cherry, grape, lemon, melon, orange];
+let randomx = Math.floor(Math.random() * 8);
+let randomy = Math.floor(Math.random() * 8);
+let randomz = Math.floor(Math.random() * 8);
+fruitx.innerHTML = "<img src="+images[randomx]+">";
+fruity.innerHTML = "<img src="+images[randomy]+">";
+fruitz.innerHTML = "<img src="+images[randomz]+">";
 
-//when credit clicked
-addCredit.onclick = function() {
 
-// Add one
-defaultCredit = defaultCredit + 1;
-totalCredit.innerText = parseFloat(defaultCredit);
-    
-//when reset button clicked
+//functions
+function addCredit() {
+    creditBox.innerText -= -1;
+    txtMessage.innerText = "+1 Credit";
+}
+function fruitSpin() {
+    if(creditBox.innerText < 1) {
+        txtMessage.innerText = "at least 1 credit needed to play";
+    }
 
-var randomFruit1 = new Array("images/apple.png","images/banana.png","images/bar.png","images/cherries.png","images/grapes.png","images/lemon.png", "images/melon.png", "images/orange.png");
-var randomFruit2 = new Array("images/apple.png","images/banana.png","images/bar.png","images/cherries.png","images/grapes.png","images/lemon.png", "images/melon.png", "images/orange.png");
-var randomFruit3 = new Array("images/apple.png","images/banana.png","images/bar.png","images/cherries.png","images/grapes.png","images/lemon.png", "images/melon.png", "images/orange.png");
+    else {
+        creditBox.innerText -= 1;
+        let randomx = Math.floor(Math.random() * 8);
+        let randomy = Math.floor(Math.random() * 8);
+        let randomz = Math.floor(Math.random() * 8);
+        fruitx.innerHTML = "<img src="+images[randomx]+">";
+        fruity.innerHTML = "<img src="+images[randomy]+">";
+        fruitz.innerHTML = "<img src="+images[randomz]+">";
+        txtMessage.innerText = "try again";
 
-if (defaultCredit >= 1) {
-spin.onclick = function(){
-    var randomNum = Math.floor(Math.random() * randomFruit1.length);
-    document.getElementById("fruit1").src = randomFruit1[randomNum]; 
+    if (randomy == randomz) {
+        txtMessage.innerText = "+5 points";
+        winningsBox.innerText -= -5;
+    }
 
-    var randomNum = Math.floor(Math.random() * randomFruit2.length);
-    document.getElementById("fruit2").src = randomFruit2[randomNum]; 
-
-    var randomNum = Math.floor(Math.random() * randomFruit3.length);
-    document.getElementById("fruit3").src = randomFruit3[randomNum]; 
-    var takeAway = parseFloat(defaultCredit) - 1;
-    totalCredit.innerText = parseFloat(takeAway);
+    else if (randomx == randomy == randomz) {
+        txtMessage.innerText = "+10 points";
+        winningsBox.innerText -= -10;
+        }
+    }
 }
 
-if (defaultCredit < 1) {
-    message.innerText = "try again";
+function collectWinnings() {
+    txtMessage.innerText = "collect winnings";
+    if(winningsBox.innerText < 1){
+        txtMessage.innerText = "spin to earn winnings!";
+    }
+    else {
+        let winnings = winningsBox.innerText;
+        creditBox.innerText -= -winnings;
+        winningsBox.innerText = 0;
+        txtMessage.innerText = "winnings have been collected"
+    }
 }
-}}
