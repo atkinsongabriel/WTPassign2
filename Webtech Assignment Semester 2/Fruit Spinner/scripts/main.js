@@ -65,12 +65,12 @@ function fruitSpin() {
         fruitz.innerHTML = "<img src="+images[randomc]+">";
         txtMessage.innerText = "try again";
 
-    if (randomx == randomy == randomz) {
+    if (randoma == randomb == randomc) {
         txtMessage.innerText = "+10 points";
         winningsBox.innerText -= -10;
         }
 
-    if (randomy == randomz) {
+    if (randomb == randomc) {
         txtMessage.innerText = "+5 points";
         winningsBox.innerText -= -5;
     }
