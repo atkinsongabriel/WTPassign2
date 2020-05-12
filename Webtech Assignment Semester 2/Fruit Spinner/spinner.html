@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A fruit spinner.">
+    <title>Fruit Spinner</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="main">
+    <h1>Fruit Spinner</h1>
 
-    <!-- head -->
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="A Fruit Spinner.">
-        <title>Fruit Spinner</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
-    </head>
-    
-	<body>
+    <table>
+        <tr>
+          <th><label for="totalCredit">credit: </label><br>
+            <div id="totalCredits">0</div></th>
+          <th><label for="winnings">winnings: </label><br>
+            <div id="winnings">0</div></th>
+        </tr>
+      </table>
+    <img id="fruit1" src="images/apple.png" id="myPicture" width="100">
+    <img id="fruit2" src="images/apple.png" width="100">
+    <img id="fruit3" src="images/apple.png" width="100"> <br>
 
+    <div id="message">message</div>
 
-        
-        <!-- javascript -->
-        <script src="scripts/main.js"></script>
-    </body>
-
+    <button type="button" id="spin" name="spin">SPIN!</button>
+    <button type="button" id="credit" name="credit">Credit</button>
+    <button type="reset" id="reset" name="reset">Reset</button>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
 </html>

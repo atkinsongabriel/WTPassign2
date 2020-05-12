@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(236,179,230,1) 0%, rgba(0,212,255,1) 100%);
+}
+#main {
+    width:400px;
+    background: rgba(196, 224, 240, 0.342);
+    margin: 0 auto;
+    margin-top:30px;
+    text-align: center;
+    padding: 20px;
+}
+#message {
+    border: 1px solid;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+#winnings {
+    background: #000;
+    color: #fff;
+    width:30px;
+    height: 30px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+#totalCredits {
+    background: #000;
+    color: #fff;
+    width:30px;
+    height: 30px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+}
