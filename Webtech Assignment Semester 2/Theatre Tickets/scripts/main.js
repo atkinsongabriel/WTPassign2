@@ -1,3 +1,7 @@
+    // add event listeners
+    Submit.addEventListener("click", displayDetails);
+    Clear.addEventListener("click", clearDetails);
+
 // function that is run after clicking submit
 function displayDetails() { 
 
