@@ -33,12 +33,23 @@ fruitx.innerHTML = "<img src="+images[randomx]+">";
 fruity.innerHTML = "<img src="+images[randomy]+">";
 fruitz.innerHTML = "<img src="+images[randomz]+">";
 
+window.onload=function() {
+    document.getElementById("spin").disabled=true;
+    document.getElementById("collect").disabled=true;
+  }
+
 
 //functions
+
+// add 1 credit
 function addCredit() {
     creditBox.innerText -= -1;
     txtMessage.innerText = "+1 Credit";
+    document.getElementById("spin").disabled=false;
+    document.getElementById("collect").disabled=false;
 }
+
+// spin machine
 function fruitSpin() {
     if(creditBox.innerText < 1) {
         txtMessage.innerText = "at least 1 credit needed to play";
