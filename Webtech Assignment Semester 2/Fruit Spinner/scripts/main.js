@@ -26,12 +26,12 @@ let orange = "images/orange.png";
 
 // on page load
 let images = [apple, banana, bar, cherry, grape, lemon, melon, orange];
-let randomx = Math.floor(Math.random() * 8);
-let randomy = Math.floor(Math.random() * 8);
-let randomz = Math.floor(Math.random() * 8);
-fruitx.innerHTML = "<img src="+images[randomx]+">";
-fruity.innerHTML = "<img src="+images[randomy]+">";
-fruitz.innerHTML = "<img src="+images[randomz]+">";
+let randoma = Math.floor(Math.random() * 8);
+let randomb = Math.floor(Math.random() * 8);
+let randomc = Math.floor(Math.random() * 8);
+fruitx.innerHTML = "<img src="+images[randoma]+">";
+fruity.innerHTML = "<img src="+images[randomb]+">";
+fruitz.innerHTML = "<img src="+images[randomc]+">";
 
 window.onload=function() {
     document.getElementById("spin").disabled=true;
@@ -57,25 +57,24 @@ function fruitSpin() {
 
     else {
         creditBox.innerText -= 1;
-        let randomx = Math.floor(Math.random() * 8);
-        let randomy = Math.floor(Math.random() * 8);
-        let randomz = Math.floor(Math.random() * 8);
-        fruitx.innerHTML = "<img src="+images[randomx]+">";
-        fruity.innerHTML = "<img src="+images[randomy]+">";
-        fruitz.innerHTML = "<img src="+images[randomz]+">";
+        let randoma = Math.floor(Math.random() * 8);
+        let randomb = Math.floor(Math.random() * 8);
+        let randomc = Math.floor(Math.random() * 8);
+        fruitx.innerHTML = "<img src="+images[randoma]+">";
+        fruity.innerHTML = "<img src="+images[randomb]+">";
+        fruitz.innerHTML = "<img src="+images[randomc]+">";
         txtMessage.innerText = "try again";
+
+    if (randomx == randomy == randomz) {
+        txtMessage.innerText = "+10 points";
+        winningsBox.innerText -= -10;
+        }
 
     if (randomy == randomz) {
         txtMessage.innerText = "+5 points";
         winningsBox.innerText -= -5;
     }
-
-    else if (randomx == randomy == randomz) {
-        txtMessage.innerText = "+10 points";
-        winningsBox.innerText -= -10;
-        }
-    }
-}
+}}
 
 function collectWinnings() {
     txtMessage.innerText = "collect winnings";
